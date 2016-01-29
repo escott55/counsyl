@@ -1,0 +1,48 @@
+# We have provided you with a zip file containing sample quality control information for
+# 300 sequencing batches. Each file contains data for one batch containing 96 samples.
+# These sequencing samples were processed with the below workflow. Column names are noted
+# in parentheses.
+
+# 1. DNA extraction ("sample_type" and sample "barcode" recorded)
+# 2. DNA fragmentation
+#     - in-process QC metric: average fragment size ("frag_size")
+#     - in-process QC metric: DNA concentration ("pre_quant")
+# 3. library preparation
+#     a. blunt-end
+#     b. A-tailing
+#     c. adapter ligation
+# 4. PCR
+#     - in-process QC metric: DNA concentration ("post_quant")
+# 5. target enrichment
+# 6. sequencing
+#     - sequencing QC flag: sequencing coverage ("coverage")
+#     - sequencing QC flag: reliable CNV calling ("CNV_calling")
+#     - Sample quality is assessed during calling review using QC metrics and manual
+#		inspection of the data to make a final call ("passing_well")
+
+## Part 1
+# A) What percentage of samples have passed sequencing QC? What percentage have failed due to
+# low sequencing coverage? What percentage of samples passed sequencing coverage but failed
+# due to CNV calling?
+
+# B) Does "sample_type" relate to failing sequencing coverage QC? Does "sample_type"
+# relate to passing coverage but failing CNV calling QC?
+
+# C) Which in-process QC metrics are indicative of failing sequencing due to low
+# coverage? Which metrics are indicative of passing coverage but failing CNV calling?
+# Report your findings graphically with a figure legend.
+
+# D) Have the in-process QC metrics been stable over time (note: batches are processed
+# in numerical order)? Report your findings graphically with a figure legend.
+
+## Part 2
+# A naive CNV calling algorithm relies on unbiased sequencing to identify deletions and
+# duplications from sequence coverage alone. A common bias in sequencing workflows is
+# related to the GC content of the targeted regions, such that targeted regions at the
+# extremities are over- or under-represented. To reduce turn-around-time and cost,
+# samples that will ultimately be deemed unreliable for CNV calling should be identified
+# prior to the sequencing step.
+
+# Concisely describe a high-throughput protocol for measuring GC-content bias in samples
+# and how the data will be used to flag "bad" samples. Please include controls as
+# appropriate.
